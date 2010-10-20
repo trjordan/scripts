@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+mpc clear
+mpc ls Full\ Albums | grep "$1" | mpc add
+mpc play

@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+$dir = (isset($argv[1])) ? $argv[1] : 'Full Albums';
+passthru("mpc ls '$dir'");
+?>
