@@ -1,0 +1,15 @@
+[user]
+	name = TR Jordan
+	email = tr@tracelytics.com
+[branch]
+	autosetuprebase = always
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	editor = emacs
+[alias]
+        st = status
+        stat = status
+        tree = log --oneline --graph --all
