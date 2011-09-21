@@ -29,6 +29,8 @@ function gra {
 function r() {
     if [ "$1" == "emacs" ]; then
         cd ~/.emacs.d
+    elif [ "$1" == "scripts" ]; then
+        cd ~/scripts
     else
         cd ~/repos/$1
     fi
