@@ -3,7 +3,7 @@ alias ec2dinr="ec2din -F 'instance-state-name=running'"
 
 alias gch="git cherry -v master"
 
-alias rmqlist="sudo rabbitmqctl list_queues -p etl_vhost"
+alias rmqlist="sudo rabbitmqctl list_queues -p etl_vhost | sort"
 
 alias runetl="CELERY_CONFIG_MODULE=config celeryd --maxtasksperchild=100 -c 4 -l INFO"
 alias runtf="tracelyzer /etc/tracelyzer/tracelyzer.conf"
@@ -17,6 +17,7 @@ alias resetdb="mysql tracelytics < ~/repos/tracelons/transformer/infra/mysql_tab
 
 alias tunstart="autossh -f dev -R 4012:localhost:48256 -N && echo done"
 alias tunstop='kill `cat $AUTOSSH_PIDFILE` && echo done'
+alias webtunstart="autossh -f dev -R 5066:localhost:8081 -N"
 
 alias rmpyc="find . -regex '.*pyc$' -print0 | xargs --null -I file rm -v file"
 
