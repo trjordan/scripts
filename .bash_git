@@ -48,6 +48,19 @@ function git_color {
   fi
 }
 
+__my_ps1() {
+    local g="$(git rev-parse --git-dir 2>/dev/null)"
+    git_branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+    if [ -n  "`git status 2> /dev/null | grep "# Untracked files:"`" ]; then
+        untracked="*"
+    fi
+    if [ -n "$g" ]; then
+        printf "$(__git_ps1 "(%s)"$untracked)"
+    else
+        printf ${PWD/\/home\/trjordan/\~}
+    fi
+}
+
 function git_branch {
   git_branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
   if [ -n  "`git status 2> /dev/null | grep "# Untracked files:"`" ]; then
@@ -58,5 +71,5 @@ function git_branch {
   fi
 }
 
-PS1='\[`echo -e $dir_listing_color`\]\w \[`git_color`\]`git_branch` \[\e[0m\]$ '
+PS1='\[`echo -e $dir_listing_color`\]\w \[`git_color`\]`__my_ps1` \[\e[0m\]$ '
 PS2="> "

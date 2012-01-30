@@ -102,15 +102,15 @@ if [ -e /www/tracelytics-amz.env ]; then
     source /www/tracelytics-amz.env
 fi
 eval `ssh-agent`
-if [ -e /www/tracelytics-amz.pem ]; then 
+if [ -e /www/tracelytics-amz.pem ]; then
     ssh-add /www/tracelytics-amz.pem
 fi
-export PATH=~/bin/:$PATH
+export PATH=~/bin/:~/scripts/:$PATH
 
 umask 0002
 
-EDITOR=emacs
-GITEDITOR=emacs
+export EDITOR="emacsclient -c -a=emacs"
+export GIT_EDITOR="emacsclient -c -a=emacs"
 
 . /venv/bin/activate
 

@@ -13,3 +13,5 @@
         st = status
         stat = status
         tree = log --oneline --graph --all
+[push]
+	default = tracking
