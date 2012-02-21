@@ -5,7 +5,7 @@ alias gch="git cherry -v master"
 
 alias rmqlist="sudo rabbitmqctl list_queues -p etl_vhost | sort"
 
-alias runetl="CELERY_CONFIG_MODULE=config celeryd -B --maxtasksperchild=100 -c 4 -l INFO -Q trace_tasks,status_tasks,insert_timer_tasks,shard_insert_tasks,lastseen_on_tasks"
+alias runetl="CELERY_CONFIG_MODULE=config celeryd --maxtasksperchild=100 -c 4 -l INFO -Q trace_tasks,status_tasks,insert_timer_tasks,shard_insert_tasks,lastseen_on_tasks"
 alias runtf="tracelyzer /etc/tracelyzer/tracelyzer.conf"
 
 alias tl="cd ~/repos/tracelons/tracelytics"
