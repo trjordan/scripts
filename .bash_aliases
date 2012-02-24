@@ -21,6 +21,7 @@ alias tunstop='kill `cat $AUTOSSH_PIDFILE` && echo done'
 alias webtunstart="autossh -f dev -R 5066:localhost:8081 -N"
 
 alias rmpyc="find . -regex '.*pyc$' -print0 | xargs --null -I file rm -v file"
+alias ec="emacsclient"
 
 function gra {
     toadd=$(find . -name "$1")
