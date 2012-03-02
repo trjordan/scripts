@@ -122,3 +122,5 @@ export AUTOSSH_PIDFILE=/tmp/autossh.devtunnel.pid
 export SELENIUM_MODE='local'
 export SELENIUM_INI='../development.ini'
 export SELENIUM_URL='http://default.tracelytics.com'
+
+export CELERY_CONFIG_MODULE=config
