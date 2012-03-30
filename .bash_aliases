@@ -5,7 +5,7 @@ alias gch="git cherry -v master"
 
 alias rmqlist="sudo rabbitmqctl list_queues -p etl_vhost | sort"
 
-alias runetl="CELERY_CONFIG_MODULE=config celeryd -B --maxtasksperchild=100 -c 4 -l INFO -Q trace_tasks,status_tasks,insert_timer_tasks,shard_insert_tasks,lastseen_on_tasks"
+alias runetl="CELERY_CONFIG_MODULE=config celeryd --maxtasksperchild=100 -c 4 -l INFO -Q trace_tasks,status_tasks,insert_timer_tasks,shard_insert_tasks,lastseen_on_tasks"
 alias runtf="tracelyzer /etc/tracelyzer/tracelyzer.conf"
 
 alias tl="cd ~/repos/tracelons/tracelytics"
@@ -21,6 +21,7 @@ alias tunstop='kill `cat $AUTOSSH_PIDFILE` && echo done'
 alias webtunstart="autossh -f dev -R 5066:localhost:8081 -N"
 
 alias rmpyc="find . -regex '.*pyc$' -print0 | xargs --null -I file rm -v file"
+alias ec="emacsclient"
 
 function gra {
     toadd=$(find . -name "$1")
