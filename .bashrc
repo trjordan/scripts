@@ -105,7 +105,7 @@ eval `ssh-agent`
 if [ -e /www/tracelytics-amz.pem ]; then
     ssh-add /www/tracelytics-amz.pem
 fi
-export PATH=~/bin/:~/scripts/:$PATH
+export PATH=~/bin/:~/scripts/:/usr/local/sbin:$PATH
 
 umask 0002
 

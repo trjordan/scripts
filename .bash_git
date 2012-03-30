@@ -1,12 +1,12 @@
 # Git status bash prompt
 #
-# In addition to printing the current working directory, this prompt will 
+# In addition to printing the current working directory, this prompt will
 # show a number of things if you are in a git repository:
 # - The current branch you are in
-# - Whether there are untracked files in the repository (there will be an 
+# - Whether there are untracked files in the repository (there will be an
 #   asterisk after the branch nome if there are)
 # - Whether there are any unmerged/unstaged/staged changes or if the directory
-#   is clean. See below for the colors that will be used, and change them if 
+#   is clean. See below for the colors that will be used, and change them if
 #   you'd like.
 
 # Storing these color codes for later use
@@ -34,9 +34,11 @@ unstaged_color=$bldred
 staged_color=$bldcyn
 clean_color=$bldgrn
 
+. ~/scripts/git-completion.bash
+
 function git_color {
   git_status=`git status 2> /dev/null`
-  
+
   if [ -n "`echo $git_status | grep "# Unmerged paths:"`" ]; then
     echo -e $unmerged_color
   elif [ -n "`echo $git_status | grep "# Changes not staged for commit:"`" ]; then
@@ -66,7 +68,7 @@ function git_branch {
   if [ -n  "`git status 2> /dev/null | grep "# Untracked files:"`" ]; then
     untracked="*"
   fi
-  if [ "`expr "$git_branch" : '.*'`" -gt "0" ]; then 
+  if [ "`expr "$git_branch" : '.*'`" -gt "0" ]; then
     echo \($git_branch$untracked\)
   fi
 }
