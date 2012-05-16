@@ -105,7 +105,7 @@ eval `ssh-agent`
 if [ -e /www/tracelytics-amz.pem ]; then
     ssh-add /www/tracelytics-amz.pem
 fi
-export PATH=~/bin/:~/scripts/:/usr/local/sbin:$PATH
+export PATH=~/bin/:~/scripts/:/usr/local/sbin:/usr/local/bin:$PATH
 
 umask 0002
 
@@ -124,3 +124,5 @@ export SELENIUM_INI='../development.ini'
 export SELENIUM_URL='http://default.tracelytics.com'
 
 export CELERY_CONFIG_MODULE=config
+
+# . /usr/local/Cellar/coreutils/8.14/aliases
