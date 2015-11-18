@@ -1,0 +1,6 @@
+#!/bin/bash
+
+FILE=$1
+
+markdown $FILE > $FILE.html
+open $FILE.html
