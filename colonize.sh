@@ -5,6 +5,5 @@
 path=`dirname $0`
 
 ln -s ~/scripts/.bash_aliases ~/.bash_aliases
-ln -s ~/scripts/.bash_git ~/.bash_git
 ln -s ~/scripts/.gitconfig ~/.gitconfig
 ln -s ~/scripts/.bashrc ~/.bashrc

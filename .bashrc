@@ -109,13 +109,15 @@ export PATH=~/bin/:~/scripts/:/usr/local/sbin:/usr/local/bin:$PATH
 
 umask 0002
 
-export EDITOR="emacsclient -c -a=emacs"
-export GIT_EDITOR="emacsclient -c -a=emacs"
+export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
+export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
 
 . /venv/bin/activate
 
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export LD_LIBRARY_PATH
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#export LD_LIBRARY_PATH
+unset LD_LIBRARY_PATH
+unset DYLD_LIBRARY_PATH
 
 export AUTOSSH_PIDFILE=/tmp/autossh.devtunnel.pid
 
@@ -126,3 +128,12 @@ export SELENIUM_URL='http://default.tracelytics.com'
 export CELERY_CONFIG_MODULE=config
 
 # . /usr/local/Cellar/coreutils/8.14/aliases
+
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/share/npm/bin
+PATH=/Applications/Emacs.app/Contents/MacOS/bin/:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function, for emacs
+export PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

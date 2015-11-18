@@ -23,6 +23,10 @@ alias webtunstart="autossh -f dev -R 5066:localhost:8081 -N"
 alias rmpyc="find . -regex '.*pyc$' -print0 | xargs --null -I file rm -v file"
 alias ec="emacsclient"
 
+alias updatedb="sudo /usr/libexec/locate.updatedb"
+
+alias restart_camera="sudo killall VDCAssistant"
+
 function gra {
     toadd=$(find . -name "$1")
     git add $toadd

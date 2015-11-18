@@ -1,6 +1,6 @@
 [user]
 	name = TR Jordan
-	email = tr@tracelytics.com
+	email = tr@10stories.co
 [branch]
 	autosetuprebase = always
 [color]
@@ -15,3 +15,7 @@
         tree = log --oneline --graph --all
 [push]
 	default = tracking
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
