@@ -74,4 +74,3 @@ function git_branch {
 }
 
 PS1='\[`echo -e $dir_listing_color`\]\w \[`git_color`\]`__my_ps1` \[\e[0m\]$ '
-PS2="> "
