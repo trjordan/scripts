@@ -112,8 +112,6 @@ umask 0002
 export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
 export GIT_EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
 
-. /venv/bin/activate
-
 #LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 #export LD_LIBRARY_PATH
 unset LD_LIBRARY_PATH
@@ -129,11 +127,28 @@ export CELERY_CONFIG_MODULE=config
 
 # . /usr/local/Cellar/coreutils/8.14/aliases
 
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=/Applications/Emacs.app/Contents/MacOS/bin/:$PATH
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function, for emacs
 export PATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# FUCK
+eval "$(thefuck --alias)"
+
+export PYTHONPATH=.
+
+# git prompt
+source ~/scripts/git-prompt.sh
+source ~/scripts/git-completion.bash
+source ~/scripts/.bash_git
+
+export CFLAGS="-I/usr/local/include"
+export CXXFLAGS="-I/usr/local/include"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export NODE_ENV=development
