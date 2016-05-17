@@ -27,6 +27,9 @@ alias updatedb="sudo /usr/libexec/locate.updatedb"
 
 alias restart_camera="sudo killall VDCAssistant"
 
+alias lt_marketing="lt --port 4000"
+alias lt_product="lt --port 5000"
+
 function gra {
     toadd=$(find . -name "$1")
     git add $toadd
