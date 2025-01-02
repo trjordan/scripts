@@ -8,7 +8,7 @@
 	status = auto
 	branch = auto
 [core]
-	editor = emacs
+	editor = code
 [alias]
         st = status
         stat = status
