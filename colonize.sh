@@ -6,7 +6,7 @@ path=$(dirname $0)
 
 for file in .aliases .gitconfig .zshrc; do
     if [ ! -e ~/$file ] && [ ! -L ~/$file ]; then
-        ln -s $path/$file ~/$file
+        ln -s $(cd $path && pwd)/$file ~/$file
         echo "Linked ~/$file"
     else
         echo "Warning: ~/$file already exists and will not be linked."
