@@ -1,5 +1,6 @@
 source $HOME/.secrets
 source $HOME/.aliases
+source $HOME/.login # Unnecessary, but why not
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -10,7 +11,11 @@ git_branch()
 {
   branch="$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="""/"""} {print $NF}')"
   if [ -n "$branch" ]; then
-    echo "%F{green}(${branch})"
+    if [ -n "$(git status --porcelain)" ]; then
+      echo "%F{red}(${branch})"
+    else
+      echo "%F{green}(${branch})"
+    fi
   else 
     echo ""
   fi
