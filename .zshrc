@@ -34,3 +34,5 @@ PROMPT='%F{cyan}%~%f $(git_branch) %f${NEWLINE}$ '
 autoload -U colors && colors
 
 PATH=$PATH:$(go env GOPATH)/bin
+
+source /Users/trjordan/.config/broot/launcher/bash/br
